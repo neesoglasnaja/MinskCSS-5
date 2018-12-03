@@ -1,0 +1,583 @@
+include ./blocks/slide.jade
+include ./blocks/cover.jade
+include ./blocks/quote.jade
+include ./blocks/frame.jade
+
+- var title = "Как внедрить стандарты разработки, чтобы никто не&nbsp;пострадал"
+
+doctype html
+html(lang='ru')
+  head
+    title !{title}
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='shower/themes/ribbon/styles/screen-16x9.css')
+    link(rel='stylesheet', href='theme.css')
+    link(rel='stylesheet', href='slides.css')
+    link(rel='stylesheet', href='highlight/styles/github.css')
+  body.shower.list
+    header.caption
+      h1 !{title}
+    +slide({name: 'cover', header: title, classes:'cover'})
+      p Александра Шинкевич (
+        a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
+        | )
+      img.cover(src='pictures/bat-signal.jpg')
+    +slide({header: "Кто я?", classes: "label-header right black"})
+      ul
+        li Глава отдела фронтенда, LOVATA
+        li Full-stack Node.js разработчик
+      p
+        img.logo(src="pictures/minskcss.png")
+        img.logo(src="pictures/minskjs.png")
+        img.logo.css-m-js(src="pictures/css-minsk-js.svg")
+      img.cover.height(src='pictures/bg-blur.jpg')
+      img.cover.place.left(src='pictures/about-cover.jpg')
+    +slide({header: "О чем буду говорить?", classes: "label-header black"})
+      ul
+        li Как унифицировать codestyle (HTML, CSS, JS)
+        li.next Как автоматизировать его проверку
+        li.next Как внедрить проверку в CI
+      img.place.right.cover.height(src='pictures/cave-angle.png')
+    +slide({header: "", classes: "black label-header clear"})
+      img.cover.width(src="pictures/batman_vs_superman.jpg")
+      h2.place.bottom Guidelines&nbsp;&nbsp;&nbsp;VS&nbsp;&nbsp;&nbsp;Styleguide
+    +slide({header: "Guidelines", classes: "label-header"})
+      img(src='pictures/blackberry_guideline.jpg', style='width: 116%; margin-left: -8%;')
+    +slide({header: "Guidelines", classes: "label-header black"})
+      ul
+        li Набор стандартов и инструкций по использованию фирменного стиля
+          ul
+            li.next Применение логотипов, знаков
+            li.next Шрифты
+            li.next Цвета
+            li.next Правильное размещение на носителях
+        li.next Самостоятельный документ
+    +slide({header: "Styleguide", classes: "label-header"})
+      img.cover.width(src='pictures/styleguide.jpg')
+    +slide({header: "Styleguide", classes: "label-header black"})
+      ul
+        li Коллекция предварительно созданных элементов и правил
+        li.next В идеале — интерактивность
+        li.next Может содержать код
+    +slide({header: "React Styleguidist", classes: "label-header"})
+      img(src='pictures/styleguidist-button.jpg', style='width: 90%;')
+    +slide({header: "Code Style", classes: "label-header", styles: "background-color: #F7F6F6;"})
+      p Правила, по которым надо писать код
+      ul
+        li.next Для быстрого восприятия кода
+        li.next Для предотвращения ошибок в коде
+        li.next Для быстрого написания кода
+      img.place.right.cover.height(src="pictures/always-be-batman.png", alt="Be Batman")
+    +slide({header: "Linters", classes: "black label-header"})
+      p Автоматическая проверка кода
+      img.cover.height(src="pictures/batman-vision.jpg", alt="")
+    +slide({header: "Linters", classes: "black label-header"})
+      p Работают, только если...
+      ul
+        li.next Правила хранятся в репозитории проекта
+        li.next Они внедрены в процесс сборки
+        li.next Ошибки видно в редакторе
+        li.next Невалидный код не попадает в общую кодовую базу
+    +slide({header: "С чего начать?", classes: "label-header black"})
+      img.place.right(src='pictures/mechanic.jpg', height="100%")
+      p.next С настройки редактора
+        img.place.right(src='pictures/editorconfig-logo.png', style='width: 420px; top: 159px; right: 80px;')
+    +slide({header: ".editorconfig", classes: "label-header black"})
+      ul
+        li Единый формат настроек для всех IDE
+        li.next ~10 правил
+        li.next Разные настройки для разных форматов файлов
+        li.next Конец войны «табы или пробелы»
+      img.place.right(src='pictures/editorconfig-logo.png', style='width: 420px; top: 159px; right: 80px;')
+    +slide({header: "", classes: "clear"})
+      h2.shout.faded.next Из коробки
+      img.cover.height(src='pictures/bg-blur.jpg')
+      +cover('pictures/editorconfig-native.png')
+    +slide({header: "", classes: "clear"})
+      h2.shout.faded.next Есть плагин
+      img.cover.height(src='pictures/bg-blur.jpg')
+      +cover('pictures/editorconfig-plugin.png')
+    +slide({header: "Формат .editorconfig", classes: "label-header"})
+      pre
+        code
+          | root = true
+          | &nbsp;
+          | [*]
+          | end_of_line = lf
+          | insert_final_newline = true
+          | charset = utf-8
+          | indent_style = space
+          | indent_size = 4
+          | &nbsp;
+          | [*.{md,jade}]
+          | indent_style = tab
+    +slide({header: "", classes: "black label-header"})
+      h2.shout(style="margin: 0 105px;") HTML
+      img.cover.height(src='pictures/bg-blur.jpg')
+    +slide({header: "HTML", classes: "label-header"})
+      div.place
+        p.center
+          img(src='pictures/htmlhint.png')
+        p.center(style='font-size: 1.2em')
+          a.link.link-github(href='https://github.com/yaniswang/HTMLHint') yaniswang/HTMLHint
+    +slide({header: "", classes: ""})
+      .terminal.place(data-content='HTMLHint')
+        p npm install htmlhint -g
+        p htmlhint test.html
+    +slide({header: ".htmlhintrc", classes: "label-header"})
+      pre(style="font-size: 0.9em;")
+        code.hljs
+          | {
+          |    "tagname-lowercase": true,
+          |    "attr-lowercase": true,
+          |    "attr-value-double-quotes": true,
+          |    "doctype-first": true,
+          |    "tag-pair": true,
+          |    "spec-char-escape": true,
+          |    "id-unique": true,
+          |    "src-not-empty": true,
+          |    "attr-no-duplication": true,
+          |    "title-require": true
+          | }
+    +slide({header: "", classes: ""})
+      .terminal(data-content='gulp-htmlhint')
+        p npm install --save-dev gulp-htmlhint
+      img.place.right.bottom(src='pictures/gulp-logo.svg', style='width: 100px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | const htmlhint = require('gulp-htmlhint');
+          | gulp
+          |    .src('./src/*.html')
+          |    .pipe(htmlhint());
+    +slide({header: "", classes: ""})
+      .terminal(data-content='grunt-htmlhint')
+        p npm install --save-dev grunt-htmlhint
+      img.place.right.bottom(src='pictures/grunt-logo.svg', style='width: 120px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | grunt.loadNpmTasks('grunt-htmlhint');
+          | ...
+          | htmlhint: {
+          |   options: {
+          |     htmlhintrc: '.htmlhintrc'
+          |   },
+          | }
+    +slide({header: "", classes: ""})
+      .terminal(data-content='htmlhint-loader')
+        p npm install --save-dev htmlhint-loader
+      img.place.right.bottom(src='pictures/webpack-logo.svg', style='width: 150px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | module.exports = {
+          |   module: {
+          |     rules: [{
+          |       enforce: 'pre',
+          |       test: /\.html/,
+          |       loader: 'htmlhint-loader',
+          |       exclude: /node_modules/
+          |     }]
+          |   }
+          | }
+    +slide({header: "На любой вкус", classes: "label-header"})
+      ul
+        li
+          a(href="https://www.npmjs.com/package/htmllint") htmllint
+        li
+          a(href="https://www.npmjs.com/package/html-lint") html-lint
+        li.next
+          a(href="https://www.npmjs.com/package/pug-lint") pug-lint
+        li.next
+          a(href="https://www.npmjs.com/package/markdownlint") markdownlint
+        li.next ...
+      img.place.right.bottom(src="pictures/robin-costumes.png", alt="", style="width: 50%; margin: 50px;")
+    +slide({header: "", classes: "black label-header"})
+      h2.shout(style="margin: 0 105px;") CSS
+      img.cover.height(src='pictures/bg-blur.jpg')
+    +slide({header: "CSS", classes: "label-header", styles: "background-color: #F2F2F2;"})
+      div.place
+        img(src="pictures/stylelint.png", alt="Stylelint")
+        p.center
+          a.link.link-github(href="https://github.com/stylelint/stylelint") stylelint/stylelint
+    +slide({header: "Stylelint", classes: "black label-header"})
+      ul
+        li 170 встроенных правил
+        li.next Возможность написания и подключения плагинов
+        li.next Возможность расширения готовых конфигураций
+        li.next Работает с препроцессорными кодом (SCSS, Less, PostCSS)
+    +slide({header: ".stylelintrc", classes: "label-header"})
+      pre
+        code.hljs
+          | {
+          |   "extends": "stylelint-config-recommended",
+          |   "rules": {
+          |     "at-rule-no-unknown": [ true, {
+          |       "ignoreAtRules": ["extends"]
+          |     }],
+          |     "block-no-empty": null,
+          |     "unit-whitelist": ["em", "rem", "s"]
+          |   }
+          | }
+    +slide({header: "", classes: ""})
+      .terminal.place(data-content='stylelint')
+        p npm install -g stylelint
+        p stylelint "styles/*.css"
+    +slide({header: "Плагины для редакторов", classes: "label-header"})
+      div(style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;")
+        img(src="pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 10px 30px;")
+        img(src="pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 10px 30px;")
+        img(src="pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 10px 30px;")
+        img(src="pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 10px 30px;")
+        img(src="pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 10px 30px;")
+      p.center(style="font-size: 1.2em")
+        a(href="https://stylelint.io/user-guide/complementary-tools/#editor-plugins") stylelint.io/editor-plugins
+    +slide({header: "WebStorm", classes: "label-header black"})
+      img.cover.width(src="pictures/webstorm-stylelint.png", alt="WebStorm Stylelint integration")
+    +slide({header: "", classes: ""})
+      div.place
+        img(src="pictures/stylefmt-logo.svg", alt="Stylefmt")
+        p.center
+          a.link.link-github(href="https://github.com/morishitter/stylefmt") morishitter/stylefmt
+    +slide({header: "", classes: ""})
+      .terminal(data-content='gulp-stylelint')
+        p npm install stylelint gulp-stylelint --save-dev
+      img.place.right.bottom(src='pictures/gulp-logo.svg', style='width: 100px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | const stylelint = require('gulp-stylelint');
+          | gulp
+          |    .src('./src/*.css')
+          |    .pipe(gulpStylelint({
+          |       reporters: [
+          |         { formatter: 'string', console: true }
+          |       ]
+          |    }));
+    +slide({header: "", classes: ""})
+      .terminal(data-content='grunt-stylelint')
+        p npm install stylelint grunt-stylelint --save-dev
+      img.place.right.bottom(src='pictures/grunt-logo.svg', style='width: 120px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | grunt.loadNpmTasks('grunt-stylelint');
+          | ...
+          | grunt.initConfig({
+          |   stylelint: {
+          |     all: ['css/**/*.css', 'sass/**/*.scss']
+          |   }
+          | });
+    +slide({header: "", classes: ""})
+      .terminal(data-content='stylelint-webpack-plugin')
+        p npm install stylelint-webpack-plugin --save-dev
+      img.place.right.bottom(src='pictures/webpack-logo.svg', style='width: 150px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | const StyleLintPlugin = require('stylelint-webpack-plugin');
+          | &nbsp;
+          | module.exports = {
+          |   plugins: [
+          |     new StyleLintPlugin(options),
+          |   ]
+          | }
+    +slide({header: "Хочется больше?", classes: "label-header"})
+      ul
+        li
+          a(href="https://www.npmjs.com/package/sass-lint") sass-lint
+        li
+          a(href="https://www.npmjs.com/package/stylelint-scss") stylelint-scss
+        li
+          a(href="https://www.npmjs.com/package/lesshint") lesshint
+        li
+          a(href="https://www.npmjs.com/package/stylint") stylint
+        li
+          a(href="https://www.npmjs.com/package/stylelint-selector-bem-pattern") stylelint-selector-bem-pattern
+      img.place.right.bottom(src="pictures/dick-greyson-versions.jpg", alt="", style="width: 50%; margin: 50px;")
+    +slide({header: "CSScomb", classes: "label-header"})
+      img.cover(src="pictures/csscomb-logo.jpg", alt="CSSComb")
+    +slide({header: "CSSComb", classes: "black label-header"})
+      ul
+        li 24 встроенных правила
+        li.next Возможность сортировки любых свойств по блокам
+        li.next Встроенные конфигурации
+        li.next
+          code (master) Latest commit on 16 Feb 2017
+    +slide({header: "", classes: ""})
+      .terminal.place(data-content='CSScomb')
+        p npm install csscomb -g
+        p csscomb assets/css
+    +slide({header: ".csscomb.json", classes: "label-header"})
+      pre(style="font-size: 0.7em;")
+        code.hljs
+          | {
+          |   "always-semicolon": true,
+          |   "eof-newline": true,
+          |   "leading-zero": true,
+          |   "quotes": "single",
+          |   ...,
+          |   "sort-order": [
+          |     [
+          |       "position",
+          |       "z-index"
+          |     ], [
+          |       "display",
+          |       "visibility"
+          |     ]
+          |   ]
+          | }
+    +slide({header: "Плагины для редакторов", classes: "label-header"})
+      div(style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;")
+        img(src="pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/brackets-icon.svg", alt="Brackets", style="height: 150px; margin: 20px 30px;")
+    +slide({header: "", classes: ""})
+      h2.shout(style="font-size: 2em;")
+        a.link.link-github(href="https://github.com/davidhund/styleguide-generators#css-parsing-css-source") davidhund/styleguide-generators
+    +slide({header: "", classes: "black label-header"})
+      h2.shout(style="margin: 0 105px;") JavaScript
+      img.cover.height(src='pictures/bg-blur.jpg')
+    +slide({header: "JS", classes: "label-header", styles: "background-color: #EEEEEE"})
+      div.place
+        img(src="pictures/eslint-logo.jpg", alt="ESLint", height="300px")
+        p.center
+          a.link.link-github(href="https://github.com/eslint/eslint") eslint/eslint
+    +slide({header: "ESLint", classes: "black label-header"})
+      ul
+        li 250+ встроенных правил
+        li.next Возможность написания и подключения плагинов
+        li.next Возможность расширения готовых конфигураций
+        li.next Поддерживает различные версии стандартов (ES5/ES6/ESNext)
+    +slide({header: ".eslintrc", classes: "label-header"})
+      pre(style="font-size: 0.9em;")
+        code.hljs
+          | {
+          |   "parserOptions": {
+          |     "parser": "babel-eslint",
+          |     "sourceType": "module"
+          |   },
+          |   "env": { "browser": true },
+          |   "extends": ["airbnb-base"],
+          |   "plugins": ["vue"],
+          |   "rules": {
+          |     "semi": ["error", "always"],
+          |     "no-debugger": "warn"
+          |   }
+          | }
+    +slide({header: "", classes: ""})
+      .terminal.place(data-content='eslint')
+        p npm install -g eslint
+        p eslint --init
+        p eslint scripts/*.js
+    +slide({header: "", classes: ""})
+      .terminal(data-content='gulp-eslint')
+        p npm install gulp-eslint --save-dev
+      img.place.right.bottom(src='pictures/gulp-logo.svg', style='width: 100px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | const eslint = require('gulp-eslint');
+          | gulp
+          |    .src('./scripts/*.js')
+          |    .pipe(eslint())
+          |    .pipe(eslint.format())
+          |    .pipe(eslint.failAfterError());
+    +slide({header: "", classes: ""})
+      .terminal(data-content='grunt-eslint')
+        p npm install grunt-eslint --save-dev
+      img.place.right.bottom(src='pictures/grunt-logo.svg', style='width: 120px; margin: 50px;')
+      pre
+        code.hljs
+          | &nbsp;
+          | require('load-grunt-tasks')(grunt);
+          | &nbsp;
+          | grunt.initConfig({
+          |   eslint: {
+          |     target: ['file.js']
+          |   }
+          | });
+    +slide({header: "", classes: ""})
+      .terminal(data-content='eslint-loader')
+        p npm install eslint eslint-loader --save-dev
+      img.place.right.bottom(src='pictures/webpack-logo.svg', style='width: 150px; margin: 50px;')
+      pre
+        code.hljs.javascript
+          | &nbsp;
+          | module.exports = {
+          |   module: {
+          |     rules: [{
+          |       test: /\.js$/,
+          |       exclude: /node_modules/,
+          |       loader: "eslint-loader",
+          |       options: { emitError: true }
+          |     }]
+          |   }
+          | }
+    +slide({header: "Плагины для редакторов", classes: "label-header"})
+      div(style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;")
+        img(src="pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 20px 30px;")
+      p.center
+        a(href="https://eslint.org/docs/5.0.0/user-guide/integrations") eslint.org/integrations
+    +slide({header: "", classes: "label-header black"})
+      h2.shout(style="margin: 0 105px;") 250+ правил?!
+      img.place.right.cover.height(src="pictures/batman-what.png")
+    +slide({header: "StandardJS", classes: "label-header"})
+      img.cover(src="pictures/standardjs-logo.png", alt="StandardJS", width="50%")
+    +slide({header: "Airbnb ESLint config", classes: "label-header"})
+      img.place(src="pictures/airbnb-eslint.png", alt="Airbnb ESLint", width="60%")
+    +slide({header: "А если не просто JS?", classes: "label-header"})
+      ul
+        li
+          a(href="https://www.npmjs.com/package/babel-eslint") babel-eslint
+        li
+          a(href="https://www.npmjs.com/package/tslint") tslint
+        li
+          a(href="https://www.npmjs.com/package/eslint-plugin-flowtype") eslint-plugin-flowtype
+      img.place.right.bottom(src="pictures/batgirl-costumes.png", alt="", style="width: 40%; margin: 50px;")
+    +slide({header: "", classes: ""})
+      div.place
+        img(src='pictures/prettier-logo.png', style='width: 450px;')
+        p.center
+          a.link.link-github(href="https://github.com/prettier/prettier") prettier/prettier
+    +slide({header: "", classes: "label-header"})
+      div.place
+        img(src='pictures/jsdoc-logo.jpg', style='width: 450px;')
+        p.center
+          a(href="http://usejsdoc.org/") usejsdoc.org
+    +slide({header: "", classes: "black label-header"})
+      h2.shout(style="margin: 0 105px;") Запрещаем коммитить плохой код
+      img.cover.height(src="pictures/joker-prison.jpg", alt="")
+    +slide({header: ".git/hooks/pre-commit", classes: "label-header"})
+      pre
+        code.hljs
+          | #! /bin/bash
+          | if !(npm run lint:js --silent)
+          |   exit 1;
+          | fi
+    +slide({header: "", classes: ""})
+      .terminal(data-content='pre-commit')
+        p npm install --save-dev pre-commit
+      pre(style="font-size: 0.9em;")
+        code.hljs
+          | &nbsp;
+          | {
+          |   "name": "my-project",
+          |   "scripts": {
+          |     "lint:js": "eslint ./js/*.js",
+          |     "test": "echo '🤣 No' && exit 1"
+          |   },
+          |   "pre-commit": [
+          |     "lint:js",
+          |     "test"
+          |   ]
+          | }
+    +slide({header: "Выбери свой вариант", classes: "label-header"})
+      ul
+        li
+          a.link.link-github(href="https://github.com/observing/pre-commit") observing/pre-commit
+        li
+          a.link.link-github(href="https://github.com/okonet/lint-staged") okonet/lint-staged
+        li
+          a.link.link-github(href="https://github.com/typicode/husky") typicode/husky
+      img.place.right.cover.height(src="pictures/alfred.jpg")
+    +slide({header: "", classes: "label-header"})
+      h2.shout(style="margin: 0 105px;") Как работать с&nbsp;репозиторием
+      img.cover.height(src='pictures/bg-blur.jpg')
+    +slide({header: '', classes: 'clear black'})
+      img.cover.height(src='pictures/git-flow-meme.jpg')
+    +slide({header: '', classes: 'clear'})
+      img.cover.height(src='pictures/git-flow.png')
+    +slide({header: "", classes: "clear"})
+      img.cover.height(src="pictures/lego-batman.jpg")
+    +slide({header: "", classes: "clear"})
+      img.cover.width(src="pictures/sad-batman.jpg")
+    +slide({header: "Проблема 1.<br>Слишком строгие правила", classes: "label-header black"})
+      p.next Решение: понижать в dev-сборке «мешающие» свойства до
+        code warn
+      ul
+        li.next Создаем еще 1 файл конфигурации
+          code .dev.eslintrc
+        li.next В нем — <code>extend</code> от существующей конфигурации
+        li.next Добавляем правила с уровнем
+          code warn
+        li.next В сборщике по ключу ENV подключаем нужную конфигурацию
+    +slide({header: "Пример для Webpack", classes: "label-header"})
+      pre(style="font-size: 0.9em")
+        code.hljs.javascript
+          | const isProd = process.env.NODE_ENV === "production";
+          | &nbsp;
+          | module.exports = {
+          |   module: {
+          |     rules: [{
+          |       ...
+          |       loader: "eslint-loader",
+          |       options: {
+          |         configFile: <mark>isProd ? ".eslintrc" : ".dev.eslintrc"</mark>
+          |       }
+          |     }]
+          |   }
+          | }
+    +slide({header: "Проблема 2.<br>Плохой код попадает в репозиторий", classes: "label-header black"})
+      p.next Решение: делать проверки в CI
+      ul.next
+        li Bitbucket Pipelines
+        li Travis
+        li Jenkins
+        li TeamCity
+    +slide({header: "Bitbucket Pipelines", classes: "label-header"})
+      pre
+        code.hljs
+          | pipelines:
+          |   default:
+          |     - step:
+          |         caches:
+          |           - node
+          |         name: Source code linting
+          |         script:
+          |           - npm i
+          |           - npm run lint
+
+    +slide({header: "Подводя итог", classes: "label-header black no-number"})
+      ul
+        li Настроить редактор
+        li.next Подключить линтеры
+        li.next Вести документацию
+        li.next Бить по рукам с помощью <code>git hooks</code>
+        li.next Настроить CI
+      img.place.right.cover.height(src="pictures/end.jpg")
+    +slide({header: "Материалы по теме", classes: "label-header black"})
+      ul
+        li Кодстайл и насилие — Антон Немцев [
+          a(href='https://www.youtube.com/watch?v=HZF3XRNOpGo') Youtube
+          | ]
+        li Как оптимизировать фронтенд — Мария Кабаш [
+          a(href='https://www.youtube.com/watch?v=jcTD-zpY5RM') Youtube
+          | ]
+        li The ABC of Coded Style Guides — Henning Muszynski [
+          a(href='https://www.slideshare.net/HenningMuszynski/the-abc-of-coded-style-guides') Slideshare
+          | ]
+    +slide({name: 'theend', header: "Вопросы?", shout: true, classes: 'cover label-header'})
+      p.end-link
+        a.bigger(href="http://bit.ly/Standards-OdessaJS" target="_blank") bit.ly/Standards-OdessaJS
+        br
+        | Александра Шинкевич (
+        a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
+        | )
+      +cover('pictures/batman-comics.jpg')
+
+    .progress
+    script(src='shower/shower.min.js')
+    script(src='highlight/highlight.pack.js')
+
+    script(type='text/javascript') hljs.initHighlightingOnLoad();

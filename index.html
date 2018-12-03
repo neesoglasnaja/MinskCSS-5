@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Как внедрить стандарты разработки, чтобы никто не&nbsp;пострадал</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x9.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="slides.css">
+    <link rel="stylesheet" href="highlight/styles/github.css">
+  </head>
+  <body class="shower list">
+    <header class="caption">
+      <h1>Как внедрить стандарты разработки, чтобы никто не&nbsp;пострадал</h1>
+    </header>
+    <section id="cover" style="" class="slide  cover">
+      <h2>Как внедрить стандарты разработки, чтобы никто не&nbsp;пострадал</h2>
+      <p>Александра Шинкевич (<a href="https://twitter.com/neesoglasnaja" target="_blank">@neesoglasnaja</a>)</p><img src="pictures/bat-signal.jpg" class="cover">
+    </section>
+    <section id="" style="" class="slide  label-header right black">
+      <h2>Кто я?</h2>
+      <ul>
+        <li>Глава отдела фронтенда, LOVATA</li>
+        <li>Full-stack Node.js разработчик</li>
+      </ul>
+      <p><img src="pictures/minskcss.png" class="logo"><img src="pictures/minskjs.png" class="logo"><img src="pictures/css-minsk-js.svg" class="logo css-m-js"></p><img src="pictures/bg-blur.jpg" class="cover height"><img src="pictures/about-cover.jpg" class="cover place left">
+    </section>
+    <section id="" style="" class="slide  label-header black">
+      <h2>О чем буду говорить?</h2>
+      <ul>
+        <li>Как унифицировать codestyle (HTML, CSS, JS)</li>
+        <li class="next">Как автоматизировать его проверку</li>
+        <li class="next">Как внедрить проверку в CI</li>
+      </ul><img src="pictures/cave-angle.png" class="place right cover height">
+    </section>
+    <section id="" style="" class="slide  black label-header clear"><img src="pictures/batman_vs_superman.jpg" class="cover width">
+      <h2 class="place bottom">Guidelines&nbsp;&nbsp;&nbsp;VS&nbsp;&nbsp;&nbsp;Styleguide</h2>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Guidelines</h2><img src="pictures/blackberry_guideline.jpg" style="width: 116%; margin-left: -8%;">
+    </section>
+    <section id="" style="" class="slide  label-header black">
+      <h2>Guidelines</h2>
+      <ul>
+        <li>Набор стандартов и инструкций по использованию фирменного стиля
+          <ul>
+            <li class="next">Применение логотипов, знаков</li>
+            <li class="next">Шрифты</li>
+            <li class="next">Цвета</li>
+            <li class="next">Правильное размещение на носителях</li>
+          </ul>
+        </li>
+        <li class="next">Самостоятельный документ</li>
+      </ul>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Styleguide</h2><img src="pictures/styleguide.jpg" class="cover width">
+    </section>
+    <section id="" style="" class="slide  label-header black">
+      <h2>Styleguide</h2>
+      <ul>
+        <li>Коллекция предварительно созданных элементов и правил</li>
+        <li class="next">В идеале — интерактивность</li>
+        <li class="next">Может содержать код</li>
+      </ul>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>React Styleguidist</h2><img src="pictures/styleguidist-button.jpg" style="width: 90%;">
+    </section>
+    <section id="" style=" background-color: #F7F6F6;" class="slide  label-header">
+      <h2>Code Style</h2>
+      <p>Правила, по которым надо писать код</p>
+      <ul>
+        <li class="next">Для быстрого восприятия кода</li>
+        <li class="next">Для предотвращения ошибок в коде</li>
+        <li class="next">Для быстрого написания кода</li>
+      </ul><img src="pictures/always-be-batman.png" alt="Be Batman" class="place right cover height">
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2>Linters</h2>
+      <p>Автоматическая проверка кода</p><img src="pictures/batman-vision.jpg" alt="" class="cover height">
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2>Linters</h2>
+      <p>Работают, только если...</p>
+      <ul>
+        <li class="next">Правила хранятся в репозитории проекта</li>
+        <li class="next">Они внедрены в процесс сборки</li>
+        <li class="next">Ошибки видно в редакторе</li>
+        <li class="next">Невалидный код не попадает в общую кодовую базу</li>
+      </ul>
+    </section>
+    <section id="" style="" class="slide  label-header black">
+      <h2>С чего начать?</h2><img src="pictures/mechanic.jpg" height="100%" class="place right">
+      <p class="next">С настройки редактора<img src="pictures/editorconfig-logo.png" style="width: 420px; top: 159px; right: 80px;" class="place right"></p>
+    </section>
+    <section id="" style="" class="slide  label-header black">
+      <h2>.editorconfig</h2>
+      <ul>
+        <li>Единый формат настроек для всех IDE</li>
+        <li class="next">~10 правил</li>
+        <li class="next">Разные настройки для разных форматов файлов</li>
+        <li class="next">Конец войны «табы или пробелы»</li>
+      </ul><img src="pictures/editorconfig-logo.png" style="width: 420px; top: 159px; right: 80px;" class="place right">
+    </section>
+    <section id="" style="" class="slide  clear">
+      <h2 class="shout faded next">Из коробки</h2><img src="pictures/bg-blur.jpg" class="cover height"><img src="pictures/editorconfig-native.png" class="cover"/>
+    </section>
+    <section id="" style="" class="slide  clear">
+      <h2 class="shout faded next">Есть плагин</h2><img src="pictures/bg-blur.jpg" class="cover height"><img src="pictures/editorconfig-plugin.png" class="cover"/>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Формат .editorconfig</h2>
+      <pre><code>root = true
+&nbsp;
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+indent_style = space
+indent_size = 4
+&nbsp;
+[*.{md,jade}]
+indent_style = tab</code></pre>
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2 style="margin: 0 105px;" class="shout">HTML</h2><img src="pictures/bg-blur.jpg" class="cover height">
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>HTML</h2>
+      <div class="place">
+        <p class="center"><img src="pictures/htmlhint.png"></p>
+        <p style="font-size: 1.2em" class="center"><a href="https://github.com/yaniswang/HTMLHint" class="link link-github">yaniswang/HTMLHint</a></p>
+      </div>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="HTMLHint" class="terminal place">
+        <p>npm install htmlhint -g</p>
+        <p>htmlhint test.html</p>
+      </div>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>.htmlhintrc</h2>
+      <pre style="font-size: 0.9em;"><code class="hljs">{
+   "tagname-lowercase": true,
+   "attr-lowercase": true,
+   "attr-value-double-quotes": true,
+   "doctype-first": true,
+   "tag-pair": true,
+   "spec-char-escape": true,
+   "id-unique": true,
+   "src-not-empty": true,
+   "attr-no-duplication": true,
+   "title-require": true
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="gulp-htmlhint" class="terminal">
+        <p>npm install --save-dev gulp-htmlhint</p>
+      </div><img src="pictures/gulp-logo.svg" style="width: 100px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+const htmlhint = require('gulp-htmlhint');
+gulp
+   .src('./src/*.html')
+   .pipe(htmlhint());</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="grunt-htmlhint" class="terminal">
+        <p>npm install --save-dev grunt-htmlhint</p>
+      </div><img src="pictures/grunt-logo.svg" style="width: 120px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+grunt.loadNpmTasks('grunt-htmlhint');
+...
+htmlhint: {
+  options: {
+    htmlhintrc: '.htmlhintrc'
+  },
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="htmlhint-loader" class="terminal">
+        <p>npm install --save-dev htmlhint-loader</p>
+      </div><img src="pictures/webpack-logo.svg" style="width: 150px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+module.exports = {
+  module: {
+    rules: [{
+      enforce: 'pre',
+      test: /\.html/,
+      loader: 'htmlhint-loader',
+      exclude: /node_modules/
+    }]
+  }
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>На любой вкус</h2>
+      <ul>
+        <li><a href="https://www.npmjs.com/package/htmllint">htmllint</a></li>
+        <li><a href="https://www.npmjs.com/package/html-lint">html-lint</a></li>
+        <li class="next"><a href="https://www.npmjs.com/package/pug-lint">pug-lint</a></li>
+        <li class="next"><a href="https://www.npmjs.com/package/markdownlint">markdownlint</a></li>
+        <li class="next">...</li>
+      </ul><img src="pictures/robin-costumes.png" alt="" style="width: 50%; margin: 50px;" class="place right bottom">
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2 style="margin: 0 105px;" class="shout">CSS</h2><img src="pictures/bg-blur.jpg" class="cover height">
+    </section>
+    <section id="" style=" background-color: #F2F2F2;" class="slide  label-header">
+      <h2>CSS</h2>
+      <div class="place"><img src="pictures/stylelint.png" alt="Stylelint">
+        <p class="center"><a href="https://github.com/stylelint/stylelint" class="link link-github">stylelint/stylelint</a></p>
+      </div>
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2>Stylelint</h2>
+      <ul>
+        <li>170 встроенных правил</li>
+        <li class="next">Возможность написания и подключения плагинов</li>
+        <li class="next">Возможность расширения готовых конфигураций</li>
+        <li class="next">Работает с препроцессорными кодом (SCSS, Less, PostCSS)</li>
+      </ul>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>.stylelintrc</h2>
+      <pre><code class="hljs">{
+  "extends": "stylelint-config-recommended",
+  "rules": {
+    "at-rule-no-unknown": [ true, {
+      "ignoreAtRules": ["extends"]
+    }],
+    "block-no-empty": null,
+    "unit-whitelist": ["em", "rem", "s"]
+  }
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="stylelint" class="terminal place">
+        <p>npm install -g stylelint</p>
+        <p>stylelint "styles/*.css"</p>
+      </div>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Плагины для редакторов</h2>
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;"><img src="pictures/vim-logo.svg" alt="Vim" style="height: 150px; margin: 10px 30px;"><img src="pictures/emacs-logo.svg" alt="Emacs" style="height: 150px; margin: 10px 30px;"><img src="pictures/atom-logo.svg" alt="Atom" style="height: 150px; margin: 10px 30px;"><img src="pictures/vscode-logo.svg" alt="VSCode" style="height: 150px; margin: 10px 30px;"><img src="pictures/sublime-text-logo.png" alt="Sublime Text" style="height: 150px; margin: 10px 30px;"></div>
+      <p style="font-size: 1.2em" class="center"><a href="https://stylelint.io/user-guide/complementary-tools/#editor-plugins">stylelint.io/editor-plugins</a></p>
+    </section>
+    <section id="" style="" class="slide  label-header black">
+      <h2>WebStorm</h2><img src="pictures/webstorm-stylelint.png" alt="WebStorm Stylelint integration" class="cover width">
+    </section>
+    <section id="" style="" class="slide">
+      <div class="place"><img src="pictures/stylefmt-logo.svg" alt="Stylefmt">
+        <p class="center"><a href="https://github.com/morishitter/stylefmt" class="link link-github">morishitter/stylefmt</a></p>
+      </div>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="gulp-stylelint" class="terminal">
+        <p>npm install stylelint gulp-stylelint --save-dev</p>
+      </div><img src="pictures/gulp-logo.svg" style="width: 100px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+const stylelint = require('gulp-stylelint');
+gulp
+   .src('./src/*.css')
+   .pipe(gulpStylelint({
+      reporters: [
+        { formatter: 'string', console: true }
+      ]
+   }));</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="grunt-stylelint" class="terminal">
+        <p>npm install stylelint grunt-stylelint --save-dev</p>
+      </div><img src="pictures/grunt-logo.svg" style="width: 120px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+grunt.loadNpmTasks('grunt-stylelint');
+...
+grunt.initConfig({
+  stylelint: {
+    all: ['css/**/*.css', 'sass/**/*.scss']
+  }
+});</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="stylelint-webpack-plugin" class="terminal">
+        <p>npm install stylelint-webpack-plugin --save-dev</p>
+      </div><img src="pictures/webpack-logo.svg" style="width: 150px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+&nbsp;
+module.exports = {
+  plugins: [
+    new StyleLintPlugin(options),
+  ]
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Хочется больше?</h2>
+      <ul>
+        <li><a href="https://www.npmjs.com/package/sass-lint">sass-lint</a></li>
+        <li><a href="https://www.npmjs.com/package/stylelint-scss">stylelint-scss</a></li>
+        <li><a href="https://www.npmjs.com/package/lesshint">lesshint</a></li>
+        <li><a href="https://www.npmjs.com/package/stylint">stylint</a></li>
+        <li><a href="https://www.npmjs.com/package/stylelint-selector-bem-pattern">stylelint-selector-bem-pattern</a></li>
+      </ul><img src="pictures/dick-greyson-versions.jpg" alt="" style="width: 50%; margin: 50px;" class="place right bottom">
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>CSScomb</h2><img src="pictures/csscomb-logo.jpg" alt="CSSComb" class="cover">
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2>CSSComb</h2>
+      <ul>
+        <li>24 встроенных правила</li>
+        <li class="next">Возможность сортировки любых свойств по блокам</li>
+        <li class="next">Встроенные конфигурации</li>
+        <li class="next"><code>(master) Latest commit on 16 Feb 2017</code></li>
+      </ul>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="CSScomb" class="terminal place">
+        <p>npm install csscomb -g</p>
+        <p>csscomb assets/css</p>
+      </div>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>.csscomb.json</h2>
+      <pre style="font-size: 0.7em;"><code class="hljs">{
+  "always-semicolon": true,
+  "eof-newline": true,
+  "leading-zero": true,
+  "quotes": "single",
+  ...,
+  "sort-order": [
+    [
+      "position",
+      "z-index"
+    ], [
+      "display",
+      "visibility"
+    ]
+  ]
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Плагины для редакторов</h2>
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;"><img src="pictures/vim-logo.svg" alt="Vim" style="height: 150px; margin: 20px 30px;"><img src="pictures/emacs-logo.svg" alt="Emacs" style="height: 150px; margin: 20px 30px;"><img src="pictures/atom-logo.svg" alt="Atom" style="height: 150px; margin: 20px 30px;"><img src="pictures/vscode-logo.svg" alt="VSCode" style="height: 150px; margin: 20px 30px;"><img src="pictures/sublime-text-logo.png" alt="Sublime Text" style="height: 150px; margin: 20px 30px;"><img src="pictures/brackets-icon.svg" alt="Brackets" style="height: 150px; margin: 20px 30px;"></div>
+    </section>
+    <section id="" style="" class="slide">
+      <h2 style="font-size: 2em;" class="shout"><a href="https://github.com/davidhund/styleguide-generators#css-parsing-css-source" class="link link-github">davidhund/styleguide-generators</a></h2>
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2 style="margin: 0 105px;" class="shout">JavaScript</h2><img src="pictures/bg-blur.jpg" class="cover height">
+    </section>
+    <section id="" style=" background-color: #EEEEEE" class="slide  label-header">
+      <h2>JS</h2>
+      <div class="place"><img src="pictures/eslint-logo.jpg" alt="ESLint" height="300px">
+        <p class="center"><a href="https://github.com/eslint/eslint" class="link link-github">eslint/eslint</a></p>
+      </div>
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2>ESLint</h2>
+      <ul>
+        <li>250+ встроенных правил</li>
+        <li class="next">Возможность написания и подключения плагинов</li>
+        <li class="next">Возможность расширения готовых конфигураций</li>
+        <li class="next">Поддерживает различные версии стандартов (ES5/ES6/ESNext)</li>
+      </ul>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>.eslintrc</h2>
+      <pre style="font-size: 0.9em;"><code class="hljs">{
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module"
+  },
+  "env": { "browser": true },
+  "extends": ["airbnb-base"],
+  "plugins": ["vue"],
+  "rules": {
+    "semi": ["error", "always"],
+    "no-debugger": "warn"
+  }
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="eslint" class="terminal place">
+        <p>npm install -g eslint</p>
+        <p>eslint --init</p>
+        <p>eslint scripts/*.js</p>
+      </div>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="gulp-eslint" class="terminal">
+        <p>npm install gulp-eslint --save-dev</p>
+      </div><img src="pictures/gulp-logo.svg" style="width: 100px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+const eslint = require('gulp-eslint');
+gulp
+   .src('./scripts/*.js')
+   .pipe(eslint())
+   .pipe(eslint.format())
+   .pipe(eslint.failAfterError());</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="grunt-eslint" class="terminal">
+        <p>npm install grunt-eslint --save-dev</p>
+      </div><img src="pictures/grunt-logo.svg" style="width: 120px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs">&nbsp;
+require('load-grunt-tasks')(grunt);
+&nbsp;
+grunt.initConfig({
+  eslint: {
+    target: ['file.js']
+  }
+});</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="eslint-loader" class="terminal">
+        <p>npm install eslint eslint-loader --save-dev</p>
+      </div><img src="pictures/webpack-logo.svg" style="width: 150px; margin: 50px;" class="place right bottom">
+      <pre><code class="hljs javascript">&nbsp;
+module.exports = {
+  module: {
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "eslint-loader",
+      options: { emitError: true }
+    }]
+  }
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Плагины для редакторов</h2>
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;"><img src="pictures/vim-logo.svg" alt="Vim" style="height: 150px; margin: 20px 30px;"><img src="pictures/emacs-logo.svg" alt="Emacs" style="height: 150px; margin: 20px 30px;"><img src="pictures/atom-logo.svg" alt="Atom" style="height: 150px; margin: 20px 30px;"><img src="pictures/vscode-logo.svg" alt="VSCode" style="height: 150px; margin: 20px 30px;"><img src="pictures/sublime-text-logo.png" alt="Sublime Text" style="height: 150px; margin: 20px 30px;"></div>
+      <p class="center"><a href="https://eslint.org/docs/5.0.0/user-guide/integrations">eslint.org/integrations</a></p>
+    </section>
+    <section id="" style="" class="slide  label-header black">
+      <h2 style="margin: 0 105px;" class="shout">250+ правил?!</h2><img src="pictures/batman-what.png" class="place right cover height">
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>StandardJS</h2><img src="pictures/standardjs-logo.png" alt="StandardJS" width="50%" class="cover">
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Airbnb ESLint config</h2><img src="pictures/airbnb-eslint.png" alt="Airbnb ESLint" width="60%" class="place">
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>А если не просто JS?</h2>
+      <ul>
+        <li><a href="https://www.npmjs.com/package/babel-eslint">babel-eslint</a></li>
+        <li><a href="https://www.npmjs.com/package/tslint">tslint</a></li>
+        <li><a href="https://www.npmjs.com/package/eslint-plugin-flowtype">eslint-plugin-flowtype</a></li>
+      </ul><img src="pictures/batgirl-costumes.png" alt="" style="width: 40%; margin: 50px;" class="place right bottom">
+    </section>
+    <section id="" style="" class="slide">
+      <div class="place"><img src="pictures/prettier-logo.png" style="width: 450px;">
+        <p class="center"><a href="https://github.com/prettier/prettier" class="link link-github">prettier/prettier</a></p>
+      </div>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <div class="place"><img src="pictures/jsdoc-logo.jpg" style="width: 450px;">
+        <p class="center"><a href="http://usejsdoc.org/">usejsdoc.org</a></p>
+      </div>
+    </section>
+    <section id="" style="" class="slide  black label-header">
+      <h2 style="margin: 0 105px;" class="shout">Запрещаем коммитить плохой код</h2><img src="pictures/joker-prison.jpg" alt="" class="cover height">
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>.git/hooks/pre-commit</h2>
+      <pre><code class="hljs">#! /bin/bash
+if !(npm run lint:js --silent)
+  exit 1;
+fi</code></pre>
+    </section>
+    <section id="" style="" class="slide">
+      <div data-content="pre-commit" class="terminal">
+        <p>npm install --save-dev pre-commit</p>
+      </div>
+      <pre style="font-size: 0.9em;"><code class="hljs">&nbsp;
+{
+  "name": "my-project",
+  "scripts": {
+    "lint:js": "eslint ./js/*.js",
+    "test": "echo '🤣 No' && exit 1"
+  },
+  "pre-commit": [
+    "lint:js",
+    "test"
+  ]
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Выбери свой вариант</h2>
+      <ul>
+        <li><a href="https://github.com/observing/pre-commit" class="link link-github">observing/pre-commit</a></li>
+        <li><a href="https://github.com/okonet/lint-staged" class="link link-github">okonet/lint-staged</a></li>
+        <li><a href="https://github.com/typicode/husky" class="link link-github">typicode/husky</a></li>
+      </ul><img src="pictures/alfred.jpg" class="place right cover height">
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2 style="margin: 0 105px;" class="shout">Как работать с&nbsp;репозиторием</h2><img src="pictures/bg-blur.jpg" class="cover height">
+    </section>
+    <section id="" style="" class="slide  clear black"><img src="pictures/git-flow-meme.jpg" class="cover height">
+    </section>
+    <section id="" style="" class="slide  clear"><img src="pictures/git-flow.png" class="cover height">
+    </section>
+    <section id="" style="" class="slide  clear"><img src="pictures/lego-batman.jpg" class="cover height">
+    </section>
+    <section id="" style="" class="slide  clear"><img src="pictures/sad-batman.jpg" class="cover width">
+    </section>
+    <section id="" style="" class="slide  label-header black">
+      <h2>Проблема 1.<br>Слишком строгие правила</h2>
+      <p class="next">Решение: понижать в dev-сборке «мешающие» свойства до<code>warn</code></p>
+      <ul>
+        <li class="next">Создаем еще 1 файл конфигурации<code>.dev.eslintrc</code></li>
+        <li class="next">В нем — <code>extend</code> от существующей конфигурации</li>
+        <li class="next">Добавляем правила с уровнем<code>warn</code></li>
+        <li class="next">В сборщике по ключу ENV подключаем нужную конфигурацию</li>
+      </ul>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Пример для Webpack</h2>
+      <pre style="font-size: 0.9em"><code class="hljs javascript">const isProd = process.env.NODE_ENV === "production";
+&nbsp;
+module.exports = {
+  module: {
+    rules: [{
+      ...
+      loader: "eslint-loader",
+      options: {
+        configFile: <mark>isProd ? ".eslintrc" : ".dev.eslintrc"</mark>
+      }
+    }]
+  }
+}</code></pre>
+    </section>
+    <section id="" style="" class="slide  label-header black">
+      <h2>Проблема 2.<br>Плохой код попадает в репозиторий</h2>
+      <p class="next">Решение: делать проверки в CI</p>
+      <ul class="next">
+        <li>Bitbucket Pipelines</li>
+        <li>Travis</li>
+        <li>Jenkins</li>
+        <li>TeamCity</li>
+      </ul>
+    </section>
+    <section id="" style="" class="slide  label-header">
+      <h2>Bitbucket Pipelines</h2>
+      <pre><code class="hljs">pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        name: Source code linting
+        script:
+          - npm i
+          - npm run lint</code></pre>
+    </section>
+    <section id="" style="" class="slide  label-header black no-number">
+      <h2>Подводя итог</h2>
+      <ul>
+        <li>Настроить редактор</li>
+        <li class="next">Подключить линтеры</li>
+        <li class="next">Вести документацию</li>
+        <li class="next">Бить по рукам с помощью <code>git hooks</code></li>
+        <li class="next">Настроить CI</li>
+      </ul><img src="pictures/end.jpg" class="place right cover height">
+    </section>
+    <section id="" style="" class="slide  label-header black">
+      <h2>Материалы по теме</h2>
+      <ul>
+        <li>Кодстайл и насилие — Антон Немцев [<a href="https://www.youtube.com/watch?v=HZF3XRNOpGo">Youtube</a>]</li>
+        <li>Как оптимизировать фронтенд — Мария Кабаш [<a href="https://www.youtube.com/watch?v=jcTD-zpY5RM">Youtube</a>]</li>
+        <li>The ABC of Coded Style Guides — Henning Muszynski [<a href="https://www.slideshare.net/HenningMuszynski/the-abc-of-coded-style-guides">Slideshare</a>]</li>
+      </ul>
+    </section>
+    <section id="theend" style="" class="slide  cover label-header">
+      <h2 class=" shout shrink">Вопросы?</h2>
+      <p class="end-link"><a href="http://bit.ly/Standards-OdessaJS" target="_blank" class="bigger">bit.ly/Standards-OdessaJS</a><br>Александра Шинкевич (<a href="https://twitter.com/neesoglasnaja" target="_blank">@neesoglasnaja</a>)</p><img src="pictures/batman-comics.jpg" class="cover"/>
+    </section>
+    <div class="progress"></div>
+    <script src="shower/shower.min.js"></script>
+    <script src="highlight/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+root = true
+
+[*]
+end_of_line = crlf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+[*.jade]
+indent_style = space
+indent_size = 2
+
+[*.{js,html,styl,css,jade}]
+charset = utf-8
+
+[{package.json,.travis.yml}]
+indent_size = 2

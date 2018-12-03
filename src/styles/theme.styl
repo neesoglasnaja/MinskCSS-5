@@ -1,0 +1,256 @@
+main-color = #eb0033
+important-color = #cd0011
+
+.slide::after
+    background main-color
+    height 75px
+.slide::before
+    position absolute
+    top: 75px;
+    right: 100px;
+    height 50px
+.slide
+    padding-top: 75px
+    &.right
+        padding-left: 550px
+    h2
+        color #830000
+    .formula
+        font-size 48px
+        margin 50px auto 0
+        width 600px
+        text-align center !important
+        font-style italic
+
+        th
+        td
+            padding 0 !important
+        th
+            width 20%
+            vertical-align middle
+            background none !important
+            text-align right !important
+            padding-right 30px !important
+            font-size 120%
+            font-weight normal
+    a
+        color important-color
+        &.bottom
+            position: absolute
+            bottom: 15%;
+            left 50%
+            margin-left: -100px
+
+.html
+    color #666
+
+.hightlight
+.important
+.alert
+    border-radius 0.2em
+    padding 0.1em 0.3em
+.hightlight
+    background #fafaa2
+.hightlight *
+    color #000 !important
+.important
+    background important-color
+    color #fff
+.important *
+    color #fff !important
+.alert
+    background #D10A0A
+    color #fff
+.alert *
+    color #fff !important
+.comment
+    color #999999
+
+.progress
+    border-color main-color rgba(0, 0, 0, 0) main-color main-color
+    z-index 2
+
+.tag
+    color #AD1531
+.attr
+    color #4F7302
+
+.slide
+    .shout.smaller
+        font-size 90px
+        a
+            color #fff
+    &.menu-slide
+        h2
+            font-size 120px
+            margin-bottom 0
+            padding 0 30px
+        ul
+            color #FFF
+            & > li
+                font-size 120px
+                line-height 1
+                font-weight bold
+                padding 0 30px
+                &:before
+                    opacity 0
+
+        .selected-item
+            background-color main-color
+            display inline-block
+
+        .transparent
+            opacity 0.25
+    &.label-header
+        h2
+            display inline-block
+            padding 10px 30px
+            background-color main-color
+            color #fff
+            &.shout
+                width auto
+                margin-left 100px
+                padding-top 20px
+                padding-bottom 20px
+                font-size 90px
+    &.capture
+        h2
+            &.shout
+                font-size 64px;
+
+    h2 .label
+        color #FFF
+        padding 10px 40px
+        font-size 120px
+        &.right
+            float right
+
+    p.center
+        text-align center
+        img
+            max-width 100%
+
+    &.black
+        p
+        ul
+            color #FFF
+
+blockquote
+    font-size 35px
+    line-height 1.4
+
+figcaption
+    opacity 0.5
+    position: relative
+    line-height: 1.6
+    margin-top: 40px !important
+
+.label
+    background-color main-color
+    color #fff
+    padding 0 10px
+    display inline-block
+
+.screen-example
+    vertical-align top
+    float right
+    border 1px solid #efefef
+    padding-top 10px
+    width 700px
+
+.relative
+    position relative
+
+
+.slide ol.no-indent li, .slide ul.no-indent li
+    text-indent 0
+    margin-bottom 5px
+
+.frame
+    box-shadow 0 0 5px 5px #eee
+    line-height 0
+    border-radius 15px 15px 0 0
+    .title
+        background-color #efefef
+        height 30px
+        border-radius 15px 15px 0 0
+        border 1px solid #aaa
+        border-bottom-width 0
+        line-height 24px
+        padding-left 15px
+    .btn
+        height 13px
+        width 13px
+        display inline-block
+        border-radius 50%
+        &.close
+            background-color red
+        &.hide
+            background-color yellow
+        &.expand
+            background-color green
+
+.fade-opacity
+    opacity 0.25
+.opacity-0
+    opacity 0
+
+
+.bold
+    font-weight: bold
+
+br = 7px
+s = 12px
+mh = 25px
+.terminal
+    position relative
+    width 800px
+    padding 10px
+    margin 25px 0
+    color #b4c4c6
+    border-radius 0 0 br br
+    background-color #0f3642
+    box-shadow 0 0 0 1px rgba(0, 0, 0, 0.05), 0 0 30px 1px rgba(0, 0, 0, 0.5)
+    font-family 'PT Mono', monospace
+    font-size 1em
+    line-height 1.5em
+    &::before
+        position absolute
+        top -1*mh
+        left 0
+        display block
+        overflow hidden
+        width 100%
+        height mh
+        padding 0 80px
+        content attr(data-content)
+        text-align center
+        white-space nowrap
+        text-overflow ellipsis
+        color #4c3436
+        border-radius br br 0 0
+        background linear-gradient(0deg, #d8d8d8, #ececec)
+        font-family 'PT Sans', sans-serif
+        font-size 16px
+        line-height mh
+    &::after
+        position absolute
+        top -1*floor(mh - (mh - s)/2)
+        left 10px
+        width s
+        height s
+        content ''
+        border-radius 100%
+        background #f95c5b
+        box-shadow 0 0 0 1px #da3d42, (s + 10px) 0 0 0 #fabe3b, (s + 10px) 0 0 1px #ecb03e, (s + 10px) * 2 0 0 0 #38cd46, (s + 10px) * 2 0 0 1px #2eae32
+    p
+        margin 0
+        &::before
+            content '~$ '
+            color #5ed7ff
+
+.shower.list .slide.active
+    box-shadow: 0 0 0 1px main-color, 0 0 0 20px #d2001de3, 0 20px 50px rgba(0,0,0,.3)
+
+.slide.no-number::after
+    visibility: hidden
