@@ -72,7 +72,7 @@ html(lang='ru')
       img.place.right.cover.height(src="pictures/always-be-batman.png", alt="Be Batman")
     +slide({header: "Linters", classes: "black label-header"})
       p Автоматическая проверка кода
-      img.cover.height(src="pictures/batman-vision.jpg", alt="")
+      img.cover.width(src="pictures/batman-vision.jpg", alt="")
     +slide({header: "Linters", classes: "black label-header"})
       p Работают, только если...
       ul
@@ -100,7 +100,7 @@ html(lang='ru')
       img.cover.height(src='pictures/bg-blur.jpg')
       +cover('pictures/editorconfig-plugin.png')
     +slide({header: "Формат .editorconfig", classes: "label-header"})
-      pre
+      pre(style="font-size: 0.9em")
         code
           | root = true
           | &nbsp;
@@ -127,7 +127,7 @@ html(lang='ru')
         p npm install htmlhint -g
         p htmlhint test.html
     +slide({header: ".htmlhintrc", classes: "label-header"})
-      pre(style="font-size: 0.9em;")
+      pre(style="font-size: 0.8em;")
         code.hljs
           | {
           |    "tagname-lowercase": true,
@@ -170,7 +170,7 @@ html(lang='ru')
       .terminal(data-content='htmlhint-loader')
         p npm install --save-dev htmlhint-loader
       img.place.right.bottom(src='pictures/webpack-logo.svg', style='width: 150px; margin: 50px;')
-      pre
+      pre(style="font-size: 0.9em")
         code.hljs
           | &nbsp;
           | module.exports = {
@@ -228,15 +228,15 @@ html(lang='ru')
         p stylelint "styles/*.css"
     +slide({header: "Плагины для редакторов", classes: "label-header"})
       div(style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;")
-        img(src="pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 10px 30px;")
-        img(src="pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 10px 30px;")
-        img(src="pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 10px 30px;")
+        img(src="pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 0px 30px;")
+        img(src="pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 0px 30px;")
+        img(src="pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 0px 30px;")
         img(src="pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 10px 30px;")
         img(src="pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 10px 30px;")
       p.center(style="font-size: 1.2em")
         a(href="https://stylelint.io/user-guide/complementary-tools/#editor-plugins") stylelint.io/editor-plugins
     +slide({header: "WebStorm", classes: "label-header black"})
-      img.cover.width(src="pictures/webstorm-stylelint.png", alt="WebStorm Stylelint integration")
+      img.cover.width(src="pictures/webstorm-stylelint.png", alt="WebStorm Stylelint integration", style="margin-top: 50px")
     +slide({header: "", classes: ""})
       div.place
         img(src="pictures/stylefmt-logo.svg", alt="Stylefmt")
@@ -312,7 +312,7 @@ html(lang='ru')
         p npm install csscomb -g
         p csscomb assets/css
     +slide({header: ".csscomb.json", classes: "label-header"})
-      pre(style="font-size: 0.7em;")
+      pre(style="font-size: 0.6em;")
         code.hljs
           | {
           |   "always-semicolon": true,
@@ -332,12 +332,12 @@ html(lang='ru')
           | }
     +slide({header: "Плагины для редакторов", classes: "label-header"})
       div(style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;")
-        img(src="pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 20px 30px;")
-        img(src="pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 20px 30px;")
-        img(src="pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 20px 30px;")
-        img(src="pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 20px 30px;")
-        img(src="pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 20px 30px;")
-        img(src="pictures/brackets-icon.svg", alt="Brackets", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 0px 30px;")
+        img(src="pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 0px 30px;")
+        img(src="pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 0px 30px;")
+        img(src="pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 10px 30px;")
+        img(src="pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 10px 30px;")
+        img(src="pictures/brackets-icon.svg", alt="Brackets", style="height: 150px; margin: 10px 30px;")
     +slide({header: "", classes: ""})
       h2.shout(style="font-size: 2em;")
         a.link.link-github(href="https://github.com/davidhund/styleguide-generators#css-parsing-css-source") davidhund/styleguide-generators
@@ -356,7 +356,7 @@ html(lang='ru')
         li.next Возможность расширения готовых конфигураций
         li.next Поддерживает различные версии стандартов (ES5/ES6/ESNext)
     +slide({header: ".eslintrc", classes: "label-header"})
-      pre(style="font-size: 0.9em;")
+      pre(style="font-size: 0.8em;")
         code.hljs
           | {
           |   "parserOptions": {
@@ -407,7 +407,7 @@ html(lang='ru')
       .terminal(data-content='eslint-loader')
         p npm install eslint eslint-loader --save-dev
       img.place.right.bottom(src='pictures/webpack-logo.svg', style='width: 150px; margin: 50px;')
-      pre
+      pre(style="font-size: 0.9em")
         code.hljs.javascript
           | &nbsp;
           | module.exports = {
@@ -422,11 +422,11 @@ html(lang='ru')
           | }
     +slide({header: "Плагины для редакторов", classes: "label-header"})
       div(style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;")
-        img(src="pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 20px 30px;")
-        img(src="pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 20px 30px;")
-        img(src="pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 20px 30px;")
-        img(src="pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 20px 30px;")
-        img(src="pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 20px 30px;")
+        img(src="pictures/vim-logo.svg", alt="Vim", style="height: 150px; margin: 0px 30px;")
+        img(src="pictures/emacs-logo.svg", alt="Emacs", style="height: 150px; margin: 0px 30px;")
+        img(src="pictures/atom-logo.svg", alt="Atom", style="height: 150px; margin: 0px 30px;")
+        img(src="pictures/vscode-logo.svg", alt="VSCode", style="height: 150px; margin: 10px 30px;")
+        img(src="pictures/sublime-text-logo.png", alt="Sublime Text", style="height: 150px; margin: 10px 30px;")
       p.center
         a(href="https://eslint.org/docs/5.0.0/user-guide/integrations") eslint.org/integrations
     +slide({header: "", classes: "label-header black"})
@@ -435,7 +435,7 @@ html(lang='ru')
     +slide({header: "StandardJS", classes: "label-header"})
       img.cover(src="pictures/standardjs-logo.png", alt="StandardJS", width="50%")
     +slide({header: "Airbnb ESLint config", classes: "label-header"})
-      img.place(src="pictures/airbnb-eslint.png", alt="Airbnb ESLint", width="60%")
+      img.place(src="pictures/airbnb-eslint.png", alt="Airbnb ESLint", width="60%", style="margin-top: 50px")
     +slide({header: "А если не просто JS?", classes: "label-header"})
       ul
         li
@@ -468,7 +468,7 @@ html(lang='ru')
     +slide({header: "", classes: ""})
       .terminal(data-content='pre-commit')
         p npm install --save-dev pre-commit
-      pre(style="font-size: 0.9em;")
+      pre(style="font-size: 0.8em;")
         code.hljs
           | &nbsp;
           | {
@@ -503,19 +503,19 @@ html(lang='ru')
     +slide({header: "", classes: "clear"})
       img.cover.width(src="pictures/sad-batman.jpg")
     +slide({header: "Проблема 1.<br>Слишком строгие правила", classes: "label-header black"})
-      p.next Решение: понижать в dev-сборке «мешающие» свойства до
+      p.next Решение: понижать в local-dev-сборке «мешающие» свойства до
         code warn
       ul
         li.next Создаем еще 1 файл конфигурации
-          code .dev.eslintrc
+          code .local-dev.eslintrc
         li.next В нем — <code>extend</code> от существующей конфигурации
         li.next Добавляем правила с уровнем
           code warn
         li.next В сборщике по ключу ENV подключаем нужную конфигурацию
     +slide({header: "Пример для Webpack", classes: "label-header"})
-      pre(style="font-size: 0.9em")
+      pre(style="font-size: 0.8em")
         code.hljs.javascript
-          | const isProd = process.env.NODE_ENV === "production";
+          | const isLocal = process.env.ENV_LOCAL === "local";
           | &nbsp;
           | module.exports = {
           |   module: {
@@ -523,7 +523,7 @@ html(lang='ru')
           |       ...
           |       loader: "eslint-loader",
           |       options: {
-          |         configFile: <mark>isProd ? ".eslintrc" : ".dev.eslintrc"</mark>
+          |         configFile: <mark>isLocal ? ".local-dev.eslintrc" : ".eslintrc"</mark>
           |       }
           |     }]
           |   }
@@ -569,7 +569,7 @@ html(lang='ru')
           | ]
     +slide({name: 'theend', header: "Вопросы?", shout: true, classes: 'cover label-header'})
       p.end-link
-        a.bigger(href="http://bit.ly/Standards-OdessaJS" target="_blank") bit.ly/Standards-OdessaJS
+        a.bigger(href="http://bit.ly/Standards-MinskCSS" target="_blank") bit.ly/Standards-MinskCSS
         br
         | Александра Шинкевич (
         a(href='https://twitter.com/neesoglasnaja' target="_blank") @neesoglasnaja
