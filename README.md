@@ -10,7 +10,6 @@
 
 * Кодстайл и насилие — Антон Немцев [Youtube](https://www.youtube.com/watch?v=HZF3XRNOpGo)
 * Как оптимизировать фронтенд — Мария Кабаш [Youtube](https://www.youtube.com/watch?v=jcTD-zpY5RM)
-* The ABC of Coded Style Guides — Henning Muszynski [Slideshare](https://www.slideshare.net/HenningMuszynski/the-abc-of-coded-style-guides)
 
 ## How to launch slides
 ### 1. View the presentation
